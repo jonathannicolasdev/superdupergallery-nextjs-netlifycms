@@ -1,12 +1,23 @@
-import Head from "next/head";
-import Navigation from "./Navigation";
+import Head from 'next/head'
+
+import { styled } from '../../stitches.config'
+import Navigation from './Navigation'
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
+
+const Page = styled('main', {
+  backgroundColor: 'black',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  padding: '1em',
+})
+
 export default function Layout({ children }: Props) {
   return (
-    <div className="root">
+    <Page className="root">
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,33 +25,12 @@ export default function Layout({ children }: Props) {
         <link rel="apple-touch-icon" href="/icon.png" />
         <meta name="theme-color" content="#fff" />
       </Head>
-      <nav>
+
+      {/* <nav>
         <Navigation />
-      </nav>
-      <main>{children}</main>
-      <style jsx>
-        {`
-          .root {
-            display: block;
-            padding: 4rem 0;
-            box-sizing: border-box;
-            height: 100%;
-          }
-          main {
-            display: flex;
-            min-height: 100%;
-          }
-          @media (min-width: 769px) {
-            .root {
-              display: flex;
-              flex: 1 0 auto;
-            }
-            main {
-              flex: 1 0 auto;
-            }
-          }
-        `}
-      </style>
-    </div>
-  );
+      </nav> */}
+
+      {children}
+    </Page>
+  )
 }
