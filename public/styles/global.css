@@ -1,28 +1,51 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
-
-html,
 body {
-  font-family: "Ubuntu", sans-serif;
-  background-color: #fff;
-  color: #222;
-  font-weight: 200;
-  height: 100%;
+  font-family: system-ui, -apple-system, Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02',
+    'cv03' 1, 'cv04' 1;
+  font-variation-settings: 'wght' 450;
+  font-variant: common-ligatures contextual;
+  letter-spacing: -0.02em;
+  margin: 0;
+  padding: 0;
+}
+b,
+strong,
+h3,
+h4,
+h5,
+h6 {
+  font-variation-settings: 'wght' 650;
+}
+h1 {
+  font-variation-settings: 'wght' 850;
+}
+h2 {
+  font-variation-settings: 'wght' 750;
 }
 
-#__next {
-  height: 100%;
+@media screen and (min-device-pixel-ratio: 1.5),
+  screen and (min-resolution: 1.5dppx) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-a {
-  color: #9b9b9b;
-  text-decoration: none;
-  transition: color 0.3s ease;
+details summary {
+  cursor: pointer;
 }
 
-a:active,
-a:hover {
-  color: #000;
+img.next-image {
+  margin: 0;
+}
+
+.prose a {
+  color: #0074de;
+}
+
+.nav-line .nav-link {
+  color: #69778c;
 }
 
 .youtube-container {
