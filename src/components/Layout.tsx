@@ -8,6 +8,7 @@ type Props = {
 }
 
 const Page = styled('main', {
+  color: 'white',
   backgroundColor: 'black',
   display: 'flex',
   flexDirection: 'column',
