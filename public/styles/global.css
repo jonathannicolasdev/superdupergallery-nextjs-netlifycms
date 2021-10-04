@@ -1,5 +1,5 @@
 body {
-  font-family: system-ui, -apple-system, Arial, Helvetica, sans-serif;
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
   font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02',
     'cv03' 1, 'cv04' 1;
