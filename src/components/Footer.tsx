@@ -7,7 +7,7 @@ import Logo from './Logo'
 const FooterContainer = styled('footer', {
   width: '100%',
   border: '2px solid white',
-  minHeight: '100px',
+  minHeight: '200px',
   display: 'flex',
   flexDirection: 'column',
   '@desktop': {
@@ -33,6 +33,34 @@ const AddressAnchor = styled('a', {
   },
 })
 
+const SocialMediaLinks = styled('div', {
+  display: 'flex',
+  justifyContent: 'space-between',
+  width: '120px',
+})
+
+const SocialMediaLink = styled('a', {
+  display: 'block',
+  cursor: 'pointer',
+  img: {
+    width: '50px',
+    height: '50px',
+  },
+})
+
+const socialMediaLinks = [
+  {
+    name: 'Instagram',
+    url: 'https://instagram.com/superdupergallery',
+    iconUrl: '/images/instagram.svg',
+  },
+  {
+    name: 'Facebook',
+    url: 'https://facebook.com/superdupergallery',
+    iconUrl: '/images/facebook.svg',
+  },
+]
+
 export default function Footer() {
   return (
     <FooterContainer>
@@ -52,6 +80,21 @@ export default function Footer() {
             Philippines
           </address>
         </AddressAnchor>
+      </FooterSegment>
+      <FooterSegment>
+        <SocialMediaLinks>
+          {socialMediaLinks.map((socialMediaLink, index) => {
+            return (
+              <SocialMediaLink
+                key={socialMediaLink.name}
+                href={socialMediaLink.url}
+                target="_blank"
+              >
+                <img src={socialMediaLink.iconUrl} alt={socialMediaLink.name} />
+              </SocialMediaLink>
+            )
+          })}
+        </SocialMediaLinks>
       </FooterSegment>
       <FooterSegment>
         <p>&copy; Super Duper Gallery</p>
