@@ -6,11 +6,7 @@ import BasicMeta from '../components/meta/BasicMeta'
 import OpenGraphMeta from '../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../components/meta/TwitterCardMeta'
 import Hero from '../components/Hero'
-
-const AnimatedHeading = styled('h1', {
-  fontSize: '5rem',
-  textTransform: 'uppercase',
-})
+import AnimatedHeading from '../components/AnimatedHeading'
 
 export default function AboutPage() {
   return (
@@ -24,11 +20,7 @@ export default function AboutPage() {
       <TwitterCardMeta url={'/about'} />
 
       <Hero>
-        <AnimatedHeading>
-          Super Duper Gallery <br />
-          offers a portal <br />
-          further beyond
-        </AnimatedHeading>
+        <AnimatedHeading />
       </Hero>
     </Layout>
   )
