@@ -9,13 +9,18 @@ type Props = {
   children: React.ReactNode
 }
 
-const Page = styled('main', {
+const Page = styled('div', {
   color: 'white',
   backgroundColor: 'black',
   display: 'flex',
   flexDirection: 'column',
+  minHeight: '100vh',
   alignItems: 'center',
   padding: '1em',
+})
+
+const Main = styled('main', {
+  flex: 1,
 })
 
 export default function Layout({ children }: Props) {
@@ -27,7 +32,7 @@ export default function Layout({ children }: Props) {
       </Head>
 
       <Header />
-      {children}
+      <Main>{children}</Main>
       <Footer />
     </Page>
   )
