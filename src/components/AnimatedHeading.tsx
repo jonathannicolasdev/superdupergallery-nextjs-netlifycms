@@ -1,17 +1,56 @@
 import { motion } from 'framer-motion'
 import { styled } from '../../stitches.config'
 
-const Heading = styled('h1', {
+const Heading = styled('div', {
   fontSize: '5rem',
   textTransform: 'uppercase',
+  maxWidth: '1000px',
+  display: 'flex',
+  flexWrap: 'wrap',
+  fontWeight: 'bold',
 })
+
+const Word = styled('div', {
+  margin: '10px',
+})
+
+const words = [
+  'Super',
+  'Duper',
+  'Gallery',
+  'offers',
+  'a',
+  'portal',
+  'further',
+  'beyond',
+]
 
 export default function AnimatedHeading() {
   return (
-    <h1>
-      Super Duper Gallery <br />
-      offers a portal <br />
-      further beyond
-    </h1>
+    <div>
+      <Heading>
+        {words.map((word, index) => {
+          return (
+            <Word>
+              <motion.div
+                key={index}
+                animate={{
+                  opacity: [0.5, 1, 0.5],
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{
+                  delay: 0.25 * index,
+                  repeat: Infinity,
+                  repeatDelay: 0.25 * words.length,
+                  type: 'easeInOut',
+                }}
+              >
+                {word}
+              </motion.div>
+            </Word>
+          )
+        })}
+      </Heading>
+    </div>
   )
 }
