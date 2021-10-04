@@ -5,6 +5,12 @@ import Layout from '../components/Layout'
 import BasicMeta from '../components/meta/BasicMeta'
 import OpenGraphMeta from '../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../components/meta/TwitterCardMeta'
+import Hero from '../components/Hero'
+
+const AnimatedHeading = styled('h1', {
+  fontSize: '5rem',
+  textTransform: 'uppercase',
+})
 
 export default function AboutPage() {
   return (
@@ -17,9 +23,13 @@ export default function AboutPage() {
       <OpenGraphMeta url={'/about'} />
       <TwitterCardMeta url={'/about'} />
 
-      <div>
-        <h1>About Us</h1>
-      </div>
+      <Hero>
+        <AnimatedHeading>
+          Super Duper Gallery <br />
+          offers a portal <br />
+          further beyond
+        </AnimatedHeading>
+      </Hero>
     </Layout>
   )
 }

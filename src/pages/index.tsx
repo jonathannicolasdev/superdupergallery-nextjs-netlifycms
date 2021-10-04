@@ -5,15 +5,7 @@ import Layout from '../components/Layout'
 import BasicMeta from '../components/meta/BasicMeta'
 import OpenGraphMeta from '../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../components/meta/TwitterCardMeta'
-import Header from '../components/Header'
-
-const Hero = styled('section', {
-  display: 'flex',
-  justifyContent: 'center',
-  margin: '75px 0',
-})
-
-const HeroCenter = styled('div', {})
+import Hero from '../components/Hero'
 
 const HeroHeading = styled('h1', {
   textTransform: 'uppercase',
@@ -49,9 +41,10 @@ const ArticleHeading = styled('h3', {
 })
 
 const Section = styled('section', {
-  marginBottom: '1em',
+  marginBottom: '1.5em',
   p: {
-    marginBottom: '0.25em',
+    lineHeight: '150%',
+    marginBottom: '0.75em',
   },
 })
 
@@ -81,7 +74,7 @@ export default function HomePage() {
       <Article>
         <Section>
           <ArticleHeading>
-            Super Duper Gallery offers a portal further beyond.
+            Super Duper Gallery offers a portal further beyond
           </ArticleHeading>
         </Section>
         <Section>
@@ -125,6 +118,34 @@ export default function HomePage() {
           <p>
             The innovative program of exhibitions is reflective of the gallery’s
             dictum: ignore the compulsory and pursue the super duper.
+          </p>
+        </Section>
+      </Article>
+
+      <Article>
+        <Section>
+          <ArticleHeading>Our Expertise</ArticleHeading>
+        </Section>
+        <Section>
+          <p>
+            The gallery offers facilities and services for solo and group
+            exhibitions, artist exchanges, and other collateral activities.
+          </p>
+          <p>
+            It has a team of artists with a wealth of experience in curation,
+            exhibition design, marketing, and project management.
+          </p>
+          <p>
+            The gallery serves as a platform for emerging and established
+            artists from across and outside the archipelago.
+          </p>
+          <p>
+            It is a node within a network of art institutions, collectives, and
+            artworld stakeholders.
+          </p>
+          <p>
+            Last but not the least, it is a haven and playground for artists who
+            wish to experiment and even play.{' '}
           </p>
         </Section>
       </Article>
