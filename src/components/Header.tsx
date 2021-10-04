@@ -121,7 +121,7 @@ const HeaderMobile = () => {
   return (
     <HeaderContainer>
       <HeaderSegment>
-        <Logo src="/images/superdupergallery-avatar.jpg" alt="Avatar" />
+        <Logo />
       </HeaderSegment>
       <HeaderDivider />
       <HeaderSegment>
