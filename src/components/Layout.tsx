@@ -1,7 +1,9 @@
 import Head from 'next/head'
 
 import { styled } from '../../stitches.config'
-import Navigation from './Navigation'
+
+import Header from './Header'
+import Footer from './Footer'
 
 type Props = {
   children: React.ReactNode
@@ -24,11 +26,9 @@ export default function Layout({ children }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      {/* <nav>
-        <Navigation />
-      </nav> */}
-
+      <Header />
       {children}
+      <Footer />
     </Page>
   )
 }

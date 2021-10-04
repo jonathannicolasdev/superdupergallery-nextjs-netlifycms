@@ -66,8 +66,6 @@ export default function HomePage() {
       <OpenGraphMeta url={'/'} />
       <TwitterCardMeta url={'/'} />
 
-      <Header />
-
       <Hero>
         <HeroCenter>
           <HeroHeading>

@@ -1,8 +1,8 @@
-import { link } from 'fs'
-import NextHead from 'next/head'
 import NextLink from 'next/link'
 
 import { styled } from '../../stitches.config'
+
+import Logo from './Logo'
 
 const HeaderContainer = styled('header', {
   width: '100%',
@@ -30,15 +30,6 @@ const HeaderDivider = styled('div', {
     borderColor: 'white',
     height: '120px',
     flex: 1,
-  },
-})
-
-const Logo = styled('img', {
-  width: '80px',
-  height: '80px',
-  '@desktop': {
-    width: '120px',
-    height: '120px',
   },
 })
 
@@ -101,7 +92,7 @@ const HeaderDesktop = () => {
   return (
     <HeaderContainer>
       <HeaderSegment>
-        <Logo src="/images/superdupergallery-avatar.jpg" alt="Avatar" />
+        <Logo />
       </HeaderSegment>
       <HeaderSegment>
         <Tagline>
