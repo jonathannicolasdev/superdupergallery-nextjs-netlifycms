@@ -92,7 +92,11 @@ const HeaderDesktop = () => {
   return (
     <HeaderContainer>
       <HeaderSegment>
-        <Logo />
+        <NextLink href="/">
+          <a>
+            <Logo />
+          </a>
+        </NextLink>
       </HeaderSegment>
       <HeaderSegment>
         <Tagline>
@@ -121,7 +125,11 @@ const HeaderMobile = () => {
   return (
     <HeaderContainer>
       <HeaderSegment>
-        <Logo />
+        <NextLink href="/">
+          <a>
+            <Logo />
+          </a>
+        </NextLink>
       </HeaderSegment>
       <HeaderDivider />
       <HeaderSegment>

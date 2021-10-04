@@ -65,7 +65,11 @@ export default function Footer() {
   return (
     <FooterContainer>
       <FooterSegment>
-        <Logo />
+        <NextLink href="/">
+          <a>
+            <Logo />
+          </a>
+        </NextLink>
       </FooterSegment>
       <FooterSegment>
         <AddressAnchor
