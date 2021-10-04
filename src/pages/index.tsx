@@ -6,24 +6,7 @@ import BasicMeta from '../components/meta/BasicMeta'
 import OpenGraphMeta from '../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../components/meta/TwitterCardMeta'
 import Hero from '../components/Hero'
-
-const HeroHeading = styled('h1', {
-  textTransform: 'uppercase',
-  fontFamily: '"Titillium Web", sans-serif',
-  lineHeight: '80%',
-  fontWeight: 900,
-  letterSpacing: 2,
-  backgroundImage: 'url("/images/hero-text-background.jpg")',
-  color: 'transparent',
-  backgroundClip: 'text',
-  filter: 'brightness(1.5)',
-  '-webkit-text-stroke-width': '2px',
-  '-webkit-text-stroke-color': 'white',
-  fontSize: '4.5rem',
-  '@desktop': {
-    fontSize: '11.5rem',
-  },
-})
+import { AnimatedHeadingHome } from '../components/AnimatedHeading'
 
 const Article = styled('article', {
   color: 'white',
@@ -60,15 +43,7 @@ export default function HomePage() {
       <TwitterCardMeta url={'/'} />
 
       <Hero>
-        <HeroCenter>
-          <HeroHeading>
-            Super
-            <br />
-            Duper
-            <br />
-            Gallery
-          </HeroHeading>
-        </HeroCenter>
+        <AnimatedHeadingHome />
       </Hero>
 
       <Article>

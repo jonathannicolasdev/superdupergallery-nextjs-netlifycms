@@ -1,6 +1,24 @@
 import { motion } from 'framer-motion'
 import { styled } from '../../stitches.config'
 
+const HeadingHome = styled('h1', {
+  textTransform: 'uppercase',
+  fontFamily: '"Titillium Web", sans-serif',
+  lineHeight: '80%',
+  fontWeight: 900,
+  letterSpacing: 2,
+  backgroundImage: 'url("/images/hero-text-background.jpg")',
+  color: 'transparent',
+  backgroundClip: 'text',
+  filter: 'brightness(1.5)',
+  '-webkit-text-stroke-width': '2px',
+  '-webkit-text-stroke-color': 'white',
+  fontSize: '4.5rem',
+  '@desktop': {
+    fontSize: '11.5rem',
+  },
+})
+
 const Heading = styled('div', {
   fontSize: '5rem',
   textTransform: 'uppercase',
@@ -52,5 +70,28 @@ export default function AnimatedHeading() {
         })}
       </Heading>
     </div>
+  )
+}
+
+export const AnimatedHeadingHome = () => {
+  return (
+    <motion.div
+      animate={{
+        y: 20,
+      }}
+      transition={{
+        repeat: Infinity,
+        repeatType: 'mirror',
+        duration: 2,
+      }}
+    >
+      <HeadingHome>
+        Super
+        <br />
+        Duper
+        <br />
+        Gallery
+      </HeadingHome>
+    </motion.div>
   )
 }

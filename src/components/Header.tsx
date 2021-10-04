@@ -41,6 +41,9 @@ const Tagline = styled('h2', {
 
 const Navigation = styled('nav', {
   display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  alignItems: 'center',
   color: 'white',
   textTransform: 'uppercase',
   fontWeight: 900,
