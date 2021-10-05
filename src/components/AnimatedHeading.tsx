@@ -44,7 +44,7 @@ const defaultWords = [
 ]
 
 type AnimatedHeadingProps = {
-  words: string[]
+  words?: string[]
 }
 
 export default function AnimatedHeading({
