@@ -32,7 +32,7 @@ const Word = styled('div', {
   margin: '10px',
 })
 
-const words = [
+const defaultWords = [
   'Super',
   'Duper',
   'Gallery',
@@ -43,7 +43,13 @@ const words = [
   'beyond',
 ]
 
-export default function AnimatedHeading() {
+type AnimatedHeadingProps = {
+  words: string[]
+}
+
+export default function AnimatedHeading({
+  words = defaultWords,
+}: AnimatedHeadingProps) {
   return (
     <div>
       <Heading>

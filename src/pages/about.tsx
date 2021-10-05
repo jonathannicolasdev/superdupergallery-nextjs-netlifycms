@@ -1,5 +1,4 @@
 import NextHead from 'next/head'
-import { styled } from '../../stitches.config'
 
 import Layout from '../components/Layout'
 import BasicMeta from '../components/meta/BasicMeta'
