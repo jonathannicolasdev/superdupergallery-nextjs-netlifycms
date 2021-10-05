@@ -77,7 +77,7 @@ export default function Footer() {
           target="_blank"
         >
           <address>
-            8 11th Jamboree, Diliman,
+            No.8-A 11th Jamboree, Diliman,
             <br />
             Quezon City, 1103 Metro Manila
             <br />
