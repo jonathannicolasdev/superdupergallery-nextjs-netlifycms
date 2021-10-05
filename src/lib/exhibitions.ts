@@ -37,9 +37,12 @@ export function fetchExhibitionContent(): ExhibitionContent[] {
         },
       })
       const matterData = matterResult.data as {
-        date: string
-        title: string
         slug: string
+        title: string
+        date: string
+        coverImageURL: string
+        description: string
+        artists: string[]
         fullPath: string
       }
       matterData.fullPath = fullPath
@@ -55,6 +58,7 @@ export function fetchExhibitionContent(): ExhibitionContent[] {
 
       return matterData
     })
+
   // Sort exhibitions by date
   exhibitionCache = allExhibitionsData.sort((a, b) => {
     if (a.date < b.date) {
