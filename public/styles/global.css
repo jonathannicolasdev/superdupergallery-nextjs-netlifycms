@@ -23,6 +23,9 @@ h1 {
 h2 {
   font-variation-settings: 'wght' 750;
 }
+p {
+  line-height: 150%;
+}
 
 @media screen and (min-device-pixel-ratio: 1.5),
   screen and (min-resolution: 1.5dppx) {

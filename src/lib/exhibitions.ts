@@ -9,6 +9,9 @@ export type ExhibitionContent = {
   readonly slug: string
   readonly title: string
   readonly date: string
+  readonly coverImageURL: string
+  readonly description: string
+  readonly artists: string[]
   readonly fullPath: string
 }
 

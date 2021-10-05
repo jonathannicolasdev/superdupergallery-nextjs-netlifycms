@@ -24,6 +24,7 @@ type Props = {
 export default function ExhibitionsPage({ exhibitions, pagination }: Props) {
   const url = '/exhibitions'
   const title = 'All exhibitions'
+
   return (
     <Layout>
       <BasicMeta url={url} title={title} />
