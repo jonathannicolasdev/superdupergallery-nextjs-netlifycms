@@ -9,6 +9,7 @@
     { "keyword": "philippines" }
   ],
   "posts_per_page": 5,
+  "exhibitions_per_page": 10,
   "artworks_per_page": 10,
   "artistss_per_page": 10,
   "twitter_account": "@superdupergallery",
