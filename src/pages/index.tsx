@@ -1,5 +1,4 @@
 import NextHead from 'next/head'
-import { styled } from '../../stitches.config'
 
 import Layout from '../components/Layout'
 import BasicMeta from '../components/meta/BasicMeta'
@@ -7,29 +6,7 @@ import OpenGraphMeta from '../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../components/meta/TwitterCardMeta'
 import Hero from '../components/Hero'
 import { AnimatedHeadingHome } from '../components/AnimatedHeading'
-
-const Article = styled('article', {
-  color: 'white',
-  margin: '1em',
-  padding: '1em 0',
-  fontSize: '1.2rem',
-  maxWidth: '720px',
-})
-
-const ArticleHeading = styled('h3', {
-  textTransform: 'uppercase',
-  fontWeight: 900,
-  fontSize: '2rem',
-  maxWidth: '24ch',
-})
-
-const Section = styled('section', {
-  marginBottom: '1.5em',
-  p: {
-    lineHeight: '150%',
-    marginBottom: '0.75em',
-  },
-})
+import { Article, ArticleHeading, Section } from '../components/Content'
 
 export default function HomePage() {
   return (

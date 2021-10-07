@@ -6,6 +6,8 @@ import TwitterCardMeta from './meta/TwitterCardMeta'
 import Layout from './Layout'
 import Hero from './Hero'
 import Date from './Date'
+import { Article, ArticleHeading, Section } from './Content'
+import { ArtistTags, ArtistTag } from './Artist'
 
 type ExhibitionLayoutProps = {
   slug: string
@@ -53,27 +55,30 @@ export default function ExhibitionLayout({
       />
 
       <Hero>
-        <img src={coverImageURL} alt={title} height={300} />
+        <img src={coverImageURL} alt={title} height={420} />
       </Hero>
 
-      <article>
-        <div>
-          <h1>{title}</h1>
-          <div>
-            <div>
-              <Date date={date} />
-            </div>
-          </div>
-        </div>
+      <Article>
+        <Section>
+          <ArticleHeading>{title}</ArticleHeading>
+          <Date date={date} />
+        </Section>
 
-        <div>{children}</div>
+        <Section>
+          <ArtistTags>
+            {artists.map((item, index) => {
+              const color = 'red'
+              return (
+                <ArtistTag key={index} color={color}>
+                  {item}
+                </ArtistTag>
+              )
+            })}
+          </ArtistTags>
+        </Section>
 
-        <ul>
-          {artists.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      </article>
+        <Section>{children}</Section>
+      </Article>
     </Layout>
   )
 }
