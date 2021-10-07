@@ -1,7 +1,11 @@
 authors:
+  - slug: wutali
+    name: Wutali
+    introduction: Just a guy
   - slug: takahiro
     name: Takahiro Fujiwara
-    introduction: Co-founder and CTO at Fuller, Inc. / Software & Data Engineer /
+    introduction:
+      Co-founder and CTO at Fuller, Inc. / Software & Data Engineer /
       Python / Golang / React
   - slug: leonardo
     name: Leonardo da Vinci
