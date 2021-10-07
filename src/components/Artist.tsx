@@ -18,9 +18,13 @@ export const ArtistTag = ({ color, children }) => {
     border: '2px solid white',
     variants: {
       color: {
-        red: { borderColor: 'red', color: 'white' },
-        green: { borderColor: 'green', color: 'white' },
-        blue: { borderColor: 'blue', color: 'white' },
+        red: { borderColor: 'red' },
+        orange: { borderColor: 'orange' },
+        yellow: { borderColor: 'yellow' },
+        green: { borderColor: 'green' },
+        blue: { borderColor: 'blue' },
+        purple: { borderColor: 'purple' },
+        pink: { borderColor: 'pink' },
       },
     },
   })

@@ -28,6 +28,8 @@ export default function ExhibitionLayout({
   artists,
   children,
 }: ExhibitionLayoutProps) {
+  const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink']
+
   return (
     <Layout>
       <BasicMeta
@@ -67,7 +69,9 @@ export default function ExhibitionLayout({
         <Section>
           <ArtistTags>
             {artists.map((item, index) => {
-              const color = 'red'
+              const value = Math.floor(Math.random() * colors.length - 1)
+              const color = colors[value]
+
               return (
                 <ArtistTag key={index} color={color}>
                   {item}
