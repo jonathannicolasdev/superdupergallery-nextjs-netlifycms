@@ -21,6 +21,7 @@ const Page = styled('div', {
 
 const Main = styled('main', {
   flex: 1,
+  width: '100%',
 })
 
 export default function Layout({ children }: Props) {

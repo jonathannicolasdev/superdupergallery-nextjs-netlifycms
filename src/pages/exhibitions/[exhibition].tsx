@@ -2,26 +2,18 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import renderToString from 'next-mdx-remote/render-to-string'
 import { MdxRemote } from 'next-mdx-remote/types'
 import hydrate from 'next-mdx-remote/hydrate'
+
+import { parseISO } from 'date-fns'
 import matter from 'gray-matter'
-import { fetchExhibitionContent } from '../../lib/exhibitions'
 import fs from 'fs'
 import yaml from 'js-yaml'
-import { parseISO } from 'date-fns'
-import ExhibitionLayout from '../../components/ExhibitionLayout'
-
-import Carousel from '../../components/Carousel'
 import InstagramEmbed from 'react-instagram-embed'
 import YouTube from 'react-youtube'
 
-export type ExhibitionPageProps = {
-  slug: string
-  title: string
-  dateString: string
-  coverImageURL?: string
-  description?: string
-  artists?: string[]
-  source: MdxRemote.Source
-}
+import { fetchExhibitionContent } from '../../lib/exhibitions'
+
+import ExhibitionLayout from '../../components/ExhibitionLayout'
+import Carousel from '../../components/Carousel'
 
 const components = { Carousel, InstagramEmbed, YouTube }
 
@@ -31,12 +23,24 @@ const slugToExhibitionContent = ((exhibitionContents) => {
   return hash
 })(fetchExhibitionContent())
 
+export type ExhibitionPageProps = {
+  slug: string
+  title: string
+  dateString: string
+  description?: string
+  coverImageURL?: string
+  carouselImageURLs?: string[]
+  artists?: string[]
+  source: MdxRemote.Source
+}
+
 export default function ExhibitionPage({
   title,
   dateString,
   slug,
-  coverImageURL,
   description = '',
+  coverImageURL,
+  carouselImageURLs = [],
   artists = [],
   source,
 }: ExhibitionPageProps) {
@@ -46,8 +50,9 @@ export default function ExhibitionPage({
       slug={slug}
       title={title}
       date={parseISO(dateString)}
-      coverImageURL={coverImageURL}
       description={description}
+      coverImageURL={coverImageURL}
+      carouselImageURLs={carouselImageURLs}
       artists={artists}
     >
       {content}
@@ -56,11 +61,10 @@ export default function ExhibitionPage({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = fetchExhibitionContent().map((it) => '/exhibitions/' + it.slug)
-  return {
-    paths,
-    fallback: false,
-  }
+  const paths = fetchExhibitionContent().map(
+    (item) => '/exhibitions/' + item.slug
+  )
+  return { paths, fallback: false }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -72,13 +76,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   })
   const mdxSource = await renderToString(content, { components, scope: data })
+
   return {
     props: {
       slug: data.slug,
       title: data.title,
       dateString: data.date,
-      coverImageURL: data.coverImageURL,
       description: data.description,
+      coverImageURL: data.coverImageURL,
+      carouselImageURLs: data.carouselImageURLs,
       artists: data.artists,
       source: mdxSource,
     },

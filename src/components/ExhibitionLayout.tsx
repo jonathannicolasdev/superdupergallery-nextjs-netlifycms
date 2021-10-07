@@ -4,17 +4,19 @@ import OpenGraphMeta from './meta/OpenGraphMeta'
 import TwitterCardMeta from './meta/TwitterCardMeta'
 
 import Layout from './Layout'
-import Hero from './Hero'
 import Date from './Date'
-import { Article, ArticleHeading, Section } from './Content'
+import { HeroCarousel } from './Hero'
+import { Center, Article, ArticleHeading, Section } from './Content'
 import { ArtistTags, ArtistTag } from './Artist'
+import Carousel from './Carousel'
 
 type ExhibitionLayoutProps = {
   slug: string
   title: string
   date: Date
-  coverImageURL?: string
   description?: string
+  coverImageURL?: string
+  carouselImageURLs?: string[]
   artists: string[]
   children: React.ReactNode
 }
@@ -24,6 +26,7 @@ export default function ExhibitionLayout({
   date,
   slug,
   coverImageURL,
+  carouselImageURLs,
   description = '',
   artists,
   children,
@@ -56,33 +59,35 @@ export default function ExhibitionLayout({
         description={description}
       />
 
-      <Hero>
-        <img src={coverImageURL} alt={title} height={420} />
-      </Hero>
+      <HeroCarousel>
+        <Carousel images={carouselImageURLs} />
+      </HeroCarousel>
 
-      <Article>
-        <Section>
-          <ArticleHeading>{title}</ArticleHeading>
-          <Date date={date} />
-        </Section>
+      <Center>
+        <Article>
+          <Section>
+            <ArticleHeading>{title}</ArticleHeading>
+            <Date date={date} />
+          </Section>
 
-        <Section>
-          <ArtistTags>
-            {artists.map((item, index) => {
-              const value = Math.floor(Math.random() * colors.length - 1)
-              const color = colors[value]
+          <Section>
+            <ArtistTags>
+              {artists.map((item, index) => {
+                const value = Math.floor(Math.random() * colors.length - 1)
+                const color = colors[value]
 
-              return (
-                <ArtistTag key={index} color={color}>
-                  {item}
-                </ArtistTag>
-              )
-            })}
-          </ArtistTags>
-        </Section>
+                return (
+                  <ArtistTag key={index} color={color}>
+                    {item}
+                  </ArtistTag>
+                )
+              })}
+            </ArtistTags>
+          </Section>
 
-        <Section>{children}</Section>
-      </Article>
+          <Section>{children}</Section>
+        </Article>
+      </Center>
     </Layout>
   )
 }

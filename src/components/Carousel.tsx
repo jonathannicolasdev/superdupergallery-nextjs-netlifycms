@@ -4,7 +4,6 @@ import 'react-multi-carousel/lib/styles.css'
 import { styled } from '../../stitches.config'
 
 type Props = {
-  count?: number
   images: any
 }
 
@@ -17,7 +16,7 @@ const CarouselImage = styled('img', {
   maxHeight: '500px',
 })
 
-export default function Carousel({ count, images }: Props) {
+export default function Carousel({ images }: Props) {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },

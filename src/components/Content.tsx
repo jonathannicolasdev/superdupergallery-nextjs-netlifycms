@@ -1,5 +1,11 @@
 import { styled } from '../../stitches.config'
 
+export const Center = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+})
+
 export const Article = styled('article', {
   color: 'white',
   margin: '1em 0',
