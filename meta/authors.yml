@@ -1,6 +1,8 @@
 authors:
-  - slug: wutali
+  - slug: takahiro
     name: Takahiro Fujiwara
-    introduction:
-      Co-founder and CTO at Fuller, Inc. / Software & Data Engineer /
+    introduction: Co-founder and CTO at Fuller, Inc. / Software & Data Engineer /
       Python / Golang / React
+  - slug: leonardo
+    name: Leonardo da Vinci
+    introduction: Leonardo da Vinci the legend
