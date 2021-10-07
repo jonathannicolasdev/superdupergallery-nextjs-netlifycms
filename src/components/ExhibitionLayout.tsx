@@ -1,33 +1,31 @@
-import styles from '../../public/styles/content.module.css'
-
-import Copyright from './Copyright'
-import Date from './Date'
-import Layout from './Layout'
 import BasicMeta from './meta/BasicMeta'
 import JsonLdMeta from './meta/JsonLdMeta'
 import OpenGraphMeta from './meta/OpenGraphMeta'
 import TwitterCardMeta from './meta/TwitterCardMeta'
-import { SocialList } from './SocialList'
-import TagButton from './TagButton'
 
-import { getTag } from '../lib/tags'
+import Layout from './Layout'
+import Hero from './Hero'
+import Date from './Date'
 
-type Props = {
+type ExhibitionLayoutProps = {
+  slug: string
   title: string
   date: Date
-  slug: string
-  artists: string[]
+  coverImageURL?: string
   description?: string
+  artists: string[]
   children: React.ReactNode
 }
+
 export default function ExhibitionLayout({
   title,
   date,
   slug,
+  coverImageURL,
   description = '',
   artists,
   children,
-}: Props) {
+}: ExhibitionLayoutProps) {
   return (
     <Layout>
       <BasicMeta
@@ -54,24 +52,28 @@ export default function ExhibitionLayout({
         description={description}
       />
 
-      <div>
-        <article>
-          <header>
-            <h1>{title}</h1>
+      <Hero>
+        <img src={coverImageURL} alt={title} height={300} />
+      </Hero>
+
+      <article>
+        <div>
+          <h1>{title}</h1>
+          <div>
             <div>
-              <div>
-                <Date date={date} />
-              </div>
+              <Date date={date} />
             </div>
-          </header>
-          <div>{children}</div>
-          <ul>
-            {artists.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </article>
-      </div>
+          </div>
+        </div>
+
+        <div>{children}</div>
+
+        <ul>
+          {artists.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </article>
     </Layout>
   )
 }

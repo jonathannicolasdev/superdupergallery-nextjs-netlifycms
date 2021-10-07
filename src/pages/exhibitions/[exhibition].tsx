@@ -13,7 +13,7 @@ import Carousel from '../../components/Carousel'
 import InstagramEmbed from 'react-instagram-embed'
 import YouTube from 'react-youtube'
 
-export type Props = {
+export type ExhibitionPageProps = {
   slug: string
   title: string
   dateString: string
@@ -35,16 +35,18 @@ export default function ExhibitionPage({
   title,
   dateString,
   slug,
+  coverImageURL,
   description = '',
   artists = [],
   source,
-}: Props) {
+}: ExhibitionPageProps) {
   const content = hydrate(source, { components })
   return (
     <ExhibitionLayout
+      slug={slug}
       title={title}
       date={parseISO(dateString)}
-      slug={slug}
+      coverImageURL={coverImageURL}
       description={description}
       artists={artists}
     >
@@ -75,6 +77,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       slug: data.slug,
       title: data.title,
       dateString: data.date,
+      coverImageURL: data.coverImageURL,
       description: data.description,
       artists: data.artists,
       source: mdxSource,
