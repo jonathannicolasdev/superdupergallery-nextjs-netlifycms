@@ -5,7 +5,7 @@ import TwitterCardMeta from './meta/TwitterCardMeta'
 
 import Layout from './Layout'
 import Date from './Date'
-import { HeroCarousel } from './Hero'
+import { HeroCenter } from './Hero'
 import { Center, Article, ArticleHeading, Section } from './Content'
 import { ArtistTags, ArtistTag } from './Artist'
 import Carousel from './Carousel'
@@ -59,9 +59,9 @@ export default function ExhibitionLayout({
         description={description}
       />
 
-      <HeroCarousel>
+      <HeroCenter>
         <Carousel images={carouselImageURLs} />
-      </HeroCarousel>
+      </HeroCenter>
 
       <Center>
         <Article>

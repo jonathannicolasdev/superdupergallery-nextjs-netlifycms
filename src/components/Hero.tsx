@@ -6,14 +6,8 @@ export const Hero = styled('section', {
   margin: '75px 0',
 })
 
-export const HeroCenter = styled('div', {})
-
-export const HeroCarousel = styled('div', {
-  display: 'flex',
-  justifyContent: 'center',
-  margin: '2em 0',
-  maxWidth: '1280px',
-  width: '100%',
+export const HeroCenter = styled('div', {
+  margin: '1em 0',
 })
 
 export default Hero
