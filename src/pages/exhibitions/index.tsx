@@ -1,5 +1,12 @@
 import { GetStaticProps } from 'next'
 
+import config from '../../lib/config'
+import {
+  countExhibitions,
+  listExhibitionContent,
+  ExhibitionContent,
+} from '../../lib/exhibitions'
+
 import Layout from '../../components/Layout'
 import BasicMeta from '../../components/meta/BasicMeta'
 import OpenGraphMeta from '../../components/meta/OpenGraphMeta'
@@ -8,13 +15,7 @@ import TwitterCardMeta from '../../components/meta/TwitterCardMeta'
 import Hero from '../../components/Hero'
 import AnimatedHeading from '../../components/AnimatedHeading'
 import ExhibitionList from '../../components/ExhibitionList'
-
-import config from '../../lib/config'
-import {
-  countExhibitions,
-  listExhibitionContent,
-  ExhibitionContent,
-} from '../../lib/exhibitions'
+import { Center } from '../../components/Content'
 
 type Props = {
   exhibitions: ExhibitionContent[]
@@ -38,7 +39,9 @@ export default function ExhibitionsPage({ exhibitions, pagination }: Props) {
         <AnimatedHeading words={['Super', 'Exhibitions', 'For', 'You']} />
       </Hero>
 
-      <ExhibitionList exhibitions={exhibitions} pagination={pagination} />
+      <Center>
+        <ExhibitionList exhibitions={exhibitions} pagination={pagination} />
+      </Center>
     </Layout>
   )
 }
