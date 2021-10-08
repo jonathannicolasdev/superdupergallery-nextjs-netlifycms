@@ -1,18 +1,26 @@
 {
-  "base_url": "https://wutali-nextjs-netlify-blog.netlify.app",
+  "instagram_account": "superdupergallery",
   "site_title": "Super Duper Gallery",
-  "site_description": "Contemporary Art Gallery based in 🇵🇭 QC, Philippines.",
+  "twitter_account": "@superdupergallery",
+  "base_url": "https://superdupergallery.com",
   "site_keywords": [
-    { "keyword": "super" },
-    { "keyword": "duper" },
-    { "keyword": "gallery" },
-    { "keyword": "philippines" }
+    {
+      "keyword": "super"
+    },
+    {
+      "keyword": "duper"
+    },
+    {
+      "keyword": "gallery"
+    },
+    {
+      "keyword": "philippines"
+    }
   ],
-  "posts_per_page": 5,
+  "site_description": "Contemporary Art Gallery based in 🇵🇭 QC, Philippines.",
+  "artistss_per_page": 10,
   "exhibitions_per_page": 10,
   "artworks_per_page": 10,
-  "artistss_per_page": 10,
-  "twitter_account": "@superdupergallery",
-  "instagram_account": "superdupergallery",
-  "github_account": "jonathannicolasdev"
+  "github_account": "jonathannicolasdev",
+  "posts_per_page": 5
 }
