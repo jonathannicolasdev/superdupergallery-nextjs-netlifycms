@@ -60,9 +60,8 @@ export default function AnimatedHeading({
     <Heading>
       {words.map((word, index) => {
         return (
-          <Word>
+          <Word key={index}>
             <motion.div
-              key={index}
               animate={{
                 opacity: [0.5, 1, 0.5],
                 scale: [1, 1.05, 1],
