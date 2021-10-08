@@ -38,7 +38,10 @@ const EmailLink = styled('a', {
   color: 'white',
   textDecoration: 'none',
   borderBottom: '5px solid black',
-  fontSize: '1.5rem',
+  fontSize: '1rem',
+  '@desktop': {
+    fontSize: '1.5rem',
+  },
   '&:hover': {
     borderBottom: '5px solid red',
   },
