@@ -57,22 +57,32 @@ export function ExhibitionItem({ exhibition }: ExhibitionItemProps) {
     margin: '2em 0',
     fontSize: '1.2rem',
     maxWidth: '1000px',
-    alignItems: 'center',
+    flexDirection: 'column',
     h3: {
       fontSize: '2rem',
     },
     '*': {
       display: 'block',
-      marginBottom: '1em',
+      marginBottom: '0.5em',
+      '@desktop': {
+        marginBottom: '1em',
+      },
+    },
+    '@desktop': {
+      flexDirection: 'row',
+      alignItems: 'center',
     },
   })
 
   const ExhibitionItemImage = styled('img', {
-    maxWidth: '600px',
+    width: '100%',
   })
 
   const ExhibitionItemSection = styled('section', {
-    margin: '0 1em',
+    maxWidth: '600px',
+    '@desktop': {
+      margin: '0 1em',
+    },
   })
 
   const ExhibitionItemButton = styled('a', {
