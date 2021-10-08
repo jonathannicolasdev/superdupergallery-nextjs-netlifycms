@@ -85,12 +85,13 @@ export function ExhibitionItem({ exhibition }: ExhibitionItemProps) {
     },
   })
 
-  const ExhibitionItemButton = styled('a', {
+  const ExhibitionItemLinkButton = styled('a', {
     cursor: 'pointer',
     color: 'white',
     border: '2px solid white',
     padding: '0.5em 1em',
     transition: 'all 0.25s ease-in-out',
+    textDecoration: 'none',
     '&:hover': {
       backgroundColor: 'white',
       color: 'black',
@@ -111,8 +112,8 @@ export function ExhibitionItem({ exhibition }: ExhibitionItemProps) {
         <Date date={parseISO(exhibition.date)} />
         <p>{exhibition.description}</p>
         <div>
-          <NextLink href={'/exhibitions/' + exhibition.slug}>
-            <ExhibitionItemButton>Enter</ExhibitionItemButton>
+          <NextLink href={'/exhibitions/' + exhibition.slug} passHref>
+            <ExhibitionItemLinkButton>Enter</ExhibitionItemLinkButton>
           </NextLink>
         </div>
       </ExhibitionItemSection>
