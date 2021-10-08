@@ -10,6 +10,7 @@ const FooterContainer = styled('footer', {
   minHeight: '200px',
   display: 'flex',
   flexDirection: 'column',
+  padding: '0.5em 0',
   '@desktop': {
     flexDirection: 'row',
     alignItems: 'center',
@@ -17,7 +18,7 @@ const FooterContainer = styled('footer', {
 })
 
 const FooterSegment = styled('div', {
-  margin: '0 1em',
+  margin: '0.5em 1.5em',
 })
 
 const AddressAnchor = styled('a', {
@@ -25,7 +26,17 @@ const AddressAnchor = styled('a', {
   cursor: 'pointer',
   color: 'white',
   textDecoration: 'none',
-  padding: '0.5em',
+  padding: '0.5em 0',
+  borderBottom: '5px solid black',
+  fontSize: '1.5rem',
+  '&:hover': {
+    borderBottom: '5px solid red',
+  },
+})
+
+const EmailLink = styled('a', {
+  color: 'white',
+  textDecoration: 'none',
   borderBottom: '5px solid black',
   fontSize: '1.5rem',
   '&:hover': {
@@ -71,6 +82,7 @@ export default function Footer() {
           </a>
         </NextLink>
       </FooterSegment>
+
       <FooterSegment>
         <AddressAnchor
           href="https://goo.gl/maps/NGtoAsrkYFCH1cud8"
@@ -85,6 +97,17 @@ export default function Footer() {
           </address>
         </AddressAnchor>
       </FooterSegment>
+
+      <FooterSegment>
+        <EmailLink
+          href="mailto:superdupergallery@gmail.com"
+          target="_blank"
+          rel="noopener"
+        >
+          superdupergallery@gmail.com
+        </EmailLink>
+      </FooterSegment>
+
       <FooterSegment>
         <SocialMediaLinks>
           {socialMediaLinks.map((socialMediaLink, index) => {
@@ -100,6 +123,7 @@ export default function Footer() {
           })}
         </SocialMediaLinks>
       </FooterSegment>
+
       <FooterSegment>
         <p>&copy; Super Duper Gallery</p>
       </FooterSegment>

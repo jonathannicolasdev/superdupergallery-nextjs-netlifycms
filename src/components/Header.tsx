@@ -35,8 +35,14 @@ const HeaderDivider = styled('div', {
 
 const Tagline = styled('h2', {
   color: 'white',
-  fontSize: '1.2em',
-  padding: '20px',
+  textAlign: 'center',
+  paddingBottom: '0.5em',
+  fontSize: '1rem',
+  '@desktop': {
+    fontSize: '1.2rem',
+    padding: '0.5em',
+    textAlign: 'left',
+  },
 })
 
 const Navigation = styled('nav', {
@@ -47,18 +53,26 @@ const Navigation = styled('nav', {
   color: 'white',
   textTransform: 'uppercase',
   fontWeight: 900,
+  fontSize: '0.75rem',
+  '@desktop': {
+    fontSize: '1rem',
+  },
   a: {
     letterSpacing: '1px',
-    margin: '0 1em',
     color: 'white',
     textDecoration: 'none',
+    margin: '0 0.5em',
+    '@desktop': {
+      margin: '0 1em',
+    },
   },
 })
 
 const NavigationLink = styled('a', {
   cursor: 'pointer',
   padding: '0.5em',
-  borderBottom: '5px solid black',
+  border: '0px solid black',
+  borderWidth: '5px 0',
   '&:hover': {
     borderBottom: '5px solid red',
   },
