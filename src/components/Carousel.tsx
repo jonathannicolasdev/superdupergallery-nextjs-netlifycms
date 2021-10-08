@@ -7,12 +7,21 @@ type Props = {
   images: any
 }
 
+const CarouselContainer = styled('div', {
+  maxWidth: '768px',
+  margin: '0 auto',
+  userSelect: 'none',
+})
+
 const CarouselItem = styled('div', {
   display: 'flex',
   justifyContent: 'center',
+  alignItems: 'center',
+  padding: '40px',
 })
 
 const CarouselImage = styled('img', {
+  maxWidth: '100%',
   maxHeight: '500px',
 })
 
@@ -29,22 +38,28 @@ export default function Carousel({ images }: Props) {
   }
 
   return (
-    <ReactMultiCarousel
-      responsive={responsive}
-      infinite={true}
-      autoPlay={true}
-      autoPlaySpeed={3000}
-      keyBoardControl={true}
-      removeArrowOnDeviceType={['tablet', 'mobile']}
-      showDots={true}
-    >
-      {images.map((imageURL, index) => {
-        return (
-          <CarouselItem key={index}>
-            <CarouselImage src={imageURL} alt={imageURL} />
-          </CarouselItem>
-        )
-      })}
-    </ReactMultiCarousel>
+    <CarouselContainer>
+      <ReactMultiCarousel
+        autoPlay
+        autoPlaySpeed={5000}
+        containerClass="carousel-container"
+        infinite
+        keyBoardControl
+        removeArrowOnDeviceType={['tablet', 'mobile']}
+        renderButtonGroupOutside
+        responsive={responsive}
+        showDots
+        ssr
+        swipeable
+      >
+        {images.map((imageURL, index) => {
+          return (
+            <CarouselItem key={index}>
+              <CarouselImage src={imageURL} alt={imageURL} />
+            </CarouselItem>
+          )
+        })}
+      </ReactMultiCarousel>
+    </CarouselContainer>
   )
 }
