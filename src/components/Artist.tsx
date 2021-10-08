@@ -10,7 +10,7 @@ export const ArtistTags = ({ children }) => {
   return <Tags>{children}</Tags>
 }
 
-export const ArtistTag = ({ color, children }) => {
+export const ArtistTag = ({ color = 'white', children }) => {
   const Tag = styled('div', {
     color: 'white',
     padding: '0.5em',
@@ -18,6 +18,7 @@ export const ArtistTag = ({ color, children }) => {
     border: '2px solid white',
     variants: {
       color: {
+        white: { borderColor: 'white' },
         red: { borderColor: 'red' },
         orange: { borderColor: 'orange' },
         yellow: { borderColor: 'yellow' },
