@@ -11,6 +11,7 @@ const FooterContainer = styled('footer', {
   display: 'flex',
   flexDirection: 'column',
   padding: '0.5em 0',
+  marginTop: '5em',
   '@desktop': {
     flexDirection: 'row',
     alignItems: 'center',

@@ -20,28 +20,22 @@ type ArtworkItemProps = {
   artwork: ArtworkContent
 }
 
-const ArtworkListContainer = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  maxWidth: '1200px',
-  padding: '1em',
-})
+const ArtworkListContainer = styled('div', {})
 
 const ArtworkCollection = styled('div', {
   display: 'flex',
   flexWrap: 'wrap',
-  margin: '0 auto',
+  justifyContent: 'center',
+  alignItems: 'flex-start',
 })
 
 const ArtworkItemContainer = styled('article', {
   display: 'flex',
-  fontSize: '1.2rem',
   flexDirection: 'column',
   justifyContent: 'center',
+  fontSize: '1.2rem',
   margin: '0.5em',
   maxWidth: '250px',
-  width: '100%',
   h3: {
     fontSize: '2rem',
   },
@@ -86,16 +80,19 @@ export default function ArtworkList({
         {artworks.map((item, index) => (
           <ArtworkItem key={index} artwork={item} />
         ))}
+        {artworks.map((item, index) => (
+          <ArtworkItem key={index} artwork={item} />
+        ))}
       </ArtworkCollection>
 
-      <Pagination
+      {/* <Pagination
         current={pagination.current}
         pages={pagination.pages}
         link={{
           href: (page) => (page === 1 ? '/artworks' : '/artworks/page/[page]'),
           as: (page) => (page === 1 ? null : '/artworks/page/' + page),
         }}
-      />
+      /> */}
     </ArtworkListContainer>
   )
 }
