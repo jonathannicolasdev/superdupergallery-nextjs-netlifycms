@@ -184,7 +184,7 @@ collections:
         dateFormat: 'YYYY-MM-DD'
         timeFormat: false
       - label: 'Cover Image URL'
-        name: 'coverImageUrl'
+        name: 'coverImageURL'
         widget: 'image'
       - label: 'Body'
         name: 'body'
@@ -223,5 +223,5 @@ collections:
         dateFormat: 'YYYY-MM-DD'
         timeFormat: false
       - label: 'Image URL'
-        name: 'imageUrl'
+        name: 'imageURL'
         widget: 'image'
