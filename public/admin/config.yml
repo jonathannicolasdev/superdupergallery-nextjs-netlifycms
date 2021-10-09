@@ -48,6 +48,24 @@ collections:
     editor:
       preview: false
     files:
+      - name: 'artists'
+        label: 'Artists'
+        file: 'meta/artists.yml'
+        description: 'Artists who made the artworks'
+        fields:
+          - name: artists
+            label: Artists
+            label_singular: 'Artist'
+            widget: list
+            fields:
+              - label: 'Slug'
+                name: 'slug'
+                widget: 'string'
+                hint: 'The part of a URL identifies the author'
+              - label: 'Name'
+                name: 'name'
+                widget: 'string'
+                hint: 'Full name'
       - name: 'authors'
         label: 'Authors'
         file: 'meta/authors.yml'
@@ -65,7 +83,7 @@ collections:
               - label: 'Name'
                 name: 'name'
                 widget: 'string'
-                hint: 'First and Last'
+                hint: 'Full name'
               - label: 'Introduction'
                 name: 'introduction'
                 widget: 'text'
