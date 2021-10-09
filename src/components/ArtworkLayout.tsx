@@ -5,10 +5,11 @@ import TwitterCardMeta from './meta/TwitterCardMeta'
 
 import Layout from './Layout'
 import Date from './Date'
-import { HeroCenter } from './Hero'
+import { Hero, HeroCenter } from './Hero'
 import { Center, Article, ArticleHeading, Section } from './Content'
 import { ArtistTag } from './Artist'
 import { getArtist } from '../lib/artists'
+import { styled } from '../../stitches.config'
 
 type ArtworkLayoutProps = {
   slug: string
@@ -19,6 +20,10 @@ type ArtworkLayoutProps = {
   children: React.ReactNode
 }
 
+const ArtworkImage = styled('img', {
+  maxHeight: '500px',
+})
+
 export default function ArtworkLayout({
   slug,
   title,
@@ -27,8 +32,6 @@ export default function ArtworkLayout({
   artist,
   children,
 }: ArtworkLayoutProps) {
-  const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink']
-
   return (
     <Layout>
       <BasicMeta url={`/artworks/${slug}`} title={title} />
@@ -36,9 +39,11 @@ export default function ArtworkLayout({
       <OpenGraphMeta url={`/posts/${slug}`} title={title} />
       <JsonLdMeta url={`/posts/${slug}`} title={title} date={date} />
 
-      <HeroCenter>
-        <img src={imageURL} alt={title} />
-      </HeroCenter>
+      <Hero>
+        <HeroCenter>
+          <ArtworkImage src={imageURL} alt={title} />
+        </HeroCenter>
+      </Hero>
 
       <Center>
         <Article>
