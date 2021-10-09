@@ -80,19 +80,16 @@ export default function ArtworkList({
         {artworks.map((item, index) => (
           <ArtworkItem key={index} artwork={item} />
         ))}
-        {artworks.map((item, index) => (
-          <ArtworkItem key={index} artwork={item} />
-        ))}
       </ArtworkCollection>
 
-      {/* <Pagination
+      <Pagination
         current={pagination.current}
         pages={pagination.pages}
         link={{
           href: (page) => (page === 1 ? '/artworks' : '/artworks/page/[page]'),
           as: (page) => (page === 1 ? null : '/artworks/page/' + page),
         }}
-      /> */}
+      />
     </ArtworkListContainer>
   )
 }
