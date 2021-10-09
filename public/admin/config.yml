@@ -172,7 +172,7 @@ collections:
         name: 'body'
         widget: 'markdown'
 
- - name: 'artworks'
+  - name: 'artworks'
     label: 'Artworks'
     folder: 'content/artworks/'
     extension: 'mdx'
