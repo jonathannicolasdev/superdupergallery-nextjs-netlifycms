@@ -20,17 +20,66 @@ type ArtworkItemProps = {
   artwork: ArtworkContent
 }
 
-const ArtworkCollection = styled('div', {
+const ArtworkListContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'center',
+  maxWidth: '1200px',
+  padding: '1em',
+})
+
+const ArtworkCollection = styled('div', {
+  display: 'flex',
+  flexWrap: 'wrap',
+  margin: '0 auto',
+})
+
+const ArtworkItemContainer = styled('article', {
+  display: 'flex',
+  fontSize: '1.2rem',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  margin: '0.5em',
+  maxWidth: '250px',
+  width: '100%',
+  h3: {
+    fontSize: '2rem',
+  },
+  '*': {
+    display: 'block',
+    marginBottom: '0.5em',
+  },
+})
+
+const ArtworkItemImage = styled('img', {
+  maxHeight: '300px',
+  width: '100%',
+})
+
+const ArtworkItemSection = styled('section', {
+  maxWidth: '300px',
+  '@desktop': {
+    margin: '0 1em',
+  },
+})
+
+const ArtworkItemLinkButton = styled('a', {
+  cursor: 'pointer',
+  color: 'white',
+  border: '2px solid white',
+  padding: '0.5em 1em',
+  transition: 'all 0.25s ease-in-out',
+  textDecoration: 'none',
+  '&:hover': {
+    backgroundColor: 'white',
+    color: 'black',
+  },
 })
 
 export default function ArtworkList({
   artworks,
   pagination,
 }: ArtworkListProps) {
-  const ArtworkListContainer = styled('div', {})
-
   return (
     <ArtworkListContainer>
       <ArtworkCollection>
@@ -52,52 +101,6 @@ export default function ArtworkList({
 }
 
 export function ArtworkItem({ artwork }: ArtworkItemProps) {
-  const ArtworkItemContainer = styled('article', {
-    display: 'flex',
-    margin: '2em 0',
-    fontSize: '1.2rem',
-    maxWidth: '1000px',
-    flexDirection: 'column',
-    h3: {
-      fontSize: '2rem',
-    },
-    '*': {
-      display: 'block',
-      marginBottom: '0.5em',
-      '@desktop': {
-        marginBottom: '1em',
-      },
-    },
-    '@desktop': {
-      flexDirection: 'row',
-      alignItems: 'center',
-    },
-  })
-
-  const ArtworkItemImage = styled('img', {
-    width: '100%',
-  })
-
-  const ArtworkItemSection = styled('section', {
-    maxWidth: '600px',
-    '@desktop': {
-      margin: '0 1em',
-    },
-  })
-
-  const ArtworkItemLinkButton = styled('a', {
-    cursor: 'pointer',
-    color: 'white',
-    border: '2px solid white',
-    padding: '0.5em 1em',
-    transition: 'all 0.25s ease-in-out',
-    textDecoration: 'none',
-    '&:hover': {
-      backgroundColor: 'white',
-      color: 'black',
-    },
-  })
-
   return (
     <ArtworkItemContainer>
       <ArtworkItemSection>

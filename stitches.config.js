@@ -8,18 +8,18 @@ export const {
   getCssText,
   theme,
   createTheme,
-  config
+  config,
 } = createStitches({
   theme: {
     colors: {
       gray400: 'gainsboro',
-      gray500: 'lightgray'
-    }
+      gray500: 'lightgray',
+    },
   },
   media: {
-    desktop: '(min-width: 768px)'
+    desktop: '(min-width: 768px)',
   },
   utils: {
-    marginX: (value) => ({ marginLeft: value, marginRight: value })
-  }
+    marginX: (value) => ({ marginLeft: value, marginRight: value }),
+  },
 })
