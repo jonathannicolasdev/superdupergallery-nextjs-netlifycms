@@ -7,7 +7,7 @@ import TwitterCardMeta from '../../components/meta/TwitterCardMeta'
 import Hero from '../../components/Hero'
 import AnimatedHeading from '../../components/AnimatedHeading'
 import { Center } from '../../components/Content'
-// import ArtistLayout from '../../components/ArtistLayout'
+import ArtworkList from '../../components/ArtworkList'
 
 import { ArtistContent, listArtists, getArtist } from '../../lib/artists'
 import { ArtworkContent, listArtworkContentByArtist } from '../../lib/artworks'
@@ -32,8 +32,7 @@ export default function ArtistSlugPage({ artist, artworks }: Props) {
       </Hero>
 
       <Center>
-        <p>{JSON.stringify(artist, null, 2)}</p>
-        <p>{JSON.stringify(artworks, null, 2)}</p>
+        <ArtworkList artworks={artworks} />
       </Center>
     </Layout>
   )
