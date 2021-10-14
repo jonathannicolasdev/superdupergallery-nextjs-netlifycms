@@ -4,21 +4,20 @@ import Layout from '../../components/Layout'
 import BasicMeta from '../../components/meta/BasicMeta'
 import OpenGraphMeta from '../../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../../components/meta/TwitterCardMeta'
-import TagPostList from '../../components/TagPostList'
+
+import Hero from '../../components/Hero'
+import AnimatedHeading from '../../components/AnimatedHeading'
+import ArtistList from '../../components/ArtistList'
+import { Center } from '../../components/Content'
 
 import config from '../../lib/config'
 import { ArtistContent, listArtists } from '../../lib/artists'
 
 type Props = {
   artists: ArtistContent[]
-  page?: string
-  pagination?: {
-    current: number
-    pages: number
-  }
 }
 
-export default function ArtistsPage({ artists, page, pagination }: Props) {
+export default function ArtistsPage({ artists }: Props) {
   const url = `/artists`
   const title = 'Artists'
 
@@ -27,8 +26,14 @@ export default function ArtistsPage({ artists, page, pagination }: Props) {
       <BasicMeta url={url} title={title} />
       <OpenGraphMeta url={url} title={title} />
       <TwitterCardMeta url={url} title={title} />
-      <p>{JSON.stringify(artists, null, 2)}</p>
-      {/* <TagPostList posts={posts} tag={tag} pagination={pagination} /> */}
+
+      <Hero>
+        <AnimatedHeading words={['The', 'Amazing', 'Artists']} />
+      </Hero>
+
+      <Center>
+        <ArtistList artists={artists} />
+      </Center>
     </Layout>
   )
 }
