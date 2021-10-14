@@ -2,6 +2,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import yaml from 'js-yaml'
+import { ArtistContent } from './artists'
 
 const artworksDirectory = path.join(process.cwd(), 'content/artworks')
 
@@ -77,4 +78,15 @@ export function listArtworkContent(
   limit: number
 ): ArtworkContent[] {
   return fetchArtworkContent().slice((page - 1) * limit, page * limit)
+}
+
+export function listArtworkContentByArtist(
+  artist: ArtistContent
+): ArtworkContent[] {
+  const artworksByArtist = fetchArtworkContent().filter((artwork, index) => {
+    if (artwork.artist === artist.slug) {
+      return artwork
+    }
+  })
+  return artworksByArtist
 }
