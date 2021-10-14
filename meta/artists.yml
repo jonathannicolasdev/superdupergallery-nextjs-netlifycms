@@ -1,11 +1,23 @@
 artists:
-  - slug: alburuto
-    name: Alburuto Long Name
-  - slug: tokwa
-    name: Tokwa Penaflorida
-  - slug: trexia
-    name: Trexia
-  - slug: angellica-lorente
-    name: Angellica Lorente
+  - name: Alburuto
+    slug: alburuto
+  - name: Aldrin Tamildes
+    slug: aldrin-tamildes
+  - name: Angellica Lorente
+    slug: angellica-lorente
   - name: Anton Bolardo
     slug: anton-bolardo
+  - name: Bea Aben
+    slug: bea-aben
+  - name: Expi Perez
+    slug: expi-perez
+  - name: Gabriel Colico
+    slug: gabriel-colico
+  - name: Tisha Paculba
+    slug: tisha-paculba
+  - name: Tokwa Penaflorida
+    slug: tokwa-penaflorida
+  - name: Trexia
+    slug: trexia
+  - name: Viktor Tejada
+    slug: viktor-tejada
