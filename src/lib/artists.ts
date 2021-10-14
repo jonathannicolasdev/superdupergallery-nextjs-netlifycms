@@ -16,8 +16,6 @@ function generateArtistMap(): { [key: string]: ArtistContent } {
 }
 
 export function getArtist(slug: string) {
-  console.log({ slug })
-
   return artistMap[slug]
 }
 

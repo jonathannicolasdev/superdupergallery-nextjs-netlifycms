@@ -10,7 +10,7 @@ import { getArtist } from '../lib/artists'
 
 type ArtworkListProps = {
   artworks: ArtworkContent[]
-  pagination: {
+  pagination?: {
     current: number
     pages: number
   }
@@ -34,27 +34,26 @@ const ArtworkItemContainer = styled('article', {
   flexDirection: 'column',
   justifyContent: 'center',
   fontSize: '1.2rem',
-  margin: '0.5em',
-  maxWidth: '250px',
-  h3: {
-    fontSize: '2rem',
-  },
+  margin: '1em',
+  maxWidth: '200px',
+  height: '100%',
   '*': {
     display: 'block',
-    marginBottom: '0.5em',
   },
 })
 
 const ArtworkItemImage = styled('img', {
-  maxHeight: '300px',
+  height: '100%',
   width: '100%',
 })
 
 const ArtworkItemSection = styled('section', {
   maxWidth: '300px',
-  '@desktop': {
-    margin: '0 1em',
-  },
+  margin: '0.5em',
+})
+
+const ArtworkTitle = styled('h3', {
+  fontSize: '1.5rem',
 })
 
 const ArtworkItemLinkButton = styled('a', {
@@ -70,6 +69,17 @@ const ArtworkItemLinkButton = styled('a', {
   },
 })
 
+const ArtistAnchor = styled('a', {
+  color: 'white',
+  textDecoration: 'none',
+  paddingBottom: '2px',
+  border: '0px solid black',
+  borderWidth: '5px 0',
+  '&:hover': {
+    borderBottom: '5px solid red',
+  },
+})
+
 export default function ArtworkList({
   artworks,
   pagination,
@@ -82,19 +92,24 @@ export default function ArtworkList({
         ))}
       </ArtworkCollection>
 
-      <Pagination
-        current={pagination.current}
-        pages={pagination.pages}
-        link={{
-          href: (page) => (page === 1 ? '/artworks' : '/artworks/page/[page]'),
-          as: (page) => (page === 1 ? null : '/artworks/page/' + page),
-        }}
-      />
+      {pagination && (
+        <Pagination
+          current={pagination.current}
+          pages={pagination.pages}
+          link={{
+            href: (page) =>
+              page === 1 ? '/artworks' : '/artworks/page/[page]',
+            as: (page) => (page === 1 ? null : '/artworks/page/' + page),
+          }}
+        />
+      )}
     </ArtworkListContainer>
   )
 }
 
 export function ArtworkItem({ artwork }: ArtworkItemProps) {
+  const artist = getArtist(artwork.artist)
+
   return (
     <ArtworkItemContainer>
       <ArtworkItemSection>
@@ -102,14 +117,17 @@ export function ArtworkItem({ artwork }: ArtworkItemProps) {
       </ArtworkItemSection>
 
       <ArtworkItemSection>
-        <h3>{artwork.title}</h3>
-        <h4>{getArtist(artwork.artist).name}</h4>
+        <ArtworkTitle>{artwork.title}</ArtworkTitle>
+        <NextLink href={`/artists/${artist.slug}`} passHref>
+          <ArtistAnchor>{artist.name}</ArtistAnchor>
+        </NextLink>
         <Date date={parseISO(artwork.date)} />
-        <div>
-          <NextLink href={'/artworks/' + artwork.slug} passHref>
-            <ArtworkItemLinkButton>Details</ArtworkItemLinkButton>
-          </NextLink>
-        </div>
+      </ArtworkItemSection>
+
+      <ArtworkItemSection>
+        <NextLink href={'/artworks/' + artwork.slug} passHref>
+          <ArtworkItemLinkButton>Details</ArtworkItemLinkButton>
+        </NextLink>
       </ArtworkItemSection>
     </ArtworkItemContainer>
   )
