@@ -3,7 +3,6 @@ import artists from '../../meta/artists.yml'
 export type ArtistContent = {
   readonly slug: string
   readonly name: string
-  readonly introduction: string
 }
 
 const artistMap: { [key: string]: ArtistContent } = generateArtistMap()
@@ -18,4 +17,8 @@ function generateArtistMap(): { [key: string]: ArtistContent } {
 
 export function getArtist(slug: string) {
   return artistMap[slug]
+}
+
+export function listArtists(): ArtistContent[] {
+  return artists.artists
 }
