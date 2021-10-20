@@ -35,7 +35,10 @@ export const Section = styled('section', {
   marginBottom: '1.5em',
   variants: {
     align: {
-      center: { justifyContent: 'center', maxWidth: '100%' },
+      center: {
+        display: 'flex',
+        justifyContent: 'center',
+      },
     },
   },
 })
