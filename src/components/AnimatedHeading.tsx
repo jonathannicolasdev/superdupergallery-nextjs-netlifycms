@@ -7,14 +7,14 @@ const HeadingHome = styled('h1', {
   lineHeight: '80%',
   fontWeight: 900,
   letterSpacing: 2,
-  backgroundImage: 'url("/images/hero-text-background.jpg")',
+  backgroundImage: 'url("/images/hero-text-background.jpeg")',
   color: 'transparent',
   backgroundClip: 'text',
-  filter: 'brightness(1.5)',
-  '-webkit-text-stroke-width': '2px',
-  '-webkit-text-stroke-color': 'white',
   fontSize: '4.5rem',
+  '-webkit-text-stroke-color': 'white',
+  '-webkit-text-stroke-width': '2px',
   '@desktop': {
+    '-webkit-text-stroke-width': '5px',
     fontSize: '11.5rem',
   },
 })
