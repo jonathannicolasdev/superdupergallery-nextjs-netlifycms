@@ -11,10 +11,16 @@ export const Article = styled('article', {
   margin: '1em 0',
   padding: '1em 0',
   fontSize: '1.2rem',
-  maxWidth: '720px',
   p: {
     lineHeight: '150%',
     marginBottom: '1em',
+  },
+  maxWidth: '720px',
+  variants: {
+    size: {
+      wide: { maxWidth: '1080px' },
+      compact: { maxWidth: '720px' },
+    },
   },
 })
 
@@ -27,4 +33,9 @@ export const ArticleHeading = styled('h3', {
 
 export const Section = styled('section', {
   marginBottom: '1.5em',
+  variants: {
+    align: {
+      center: { justifyContent: 'center', maxWidth: '100%' },
+    },
+  },
 })

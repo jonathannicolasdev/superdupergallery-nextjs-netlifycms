@@ -1,18 +1,21 @@
 import { styled } from '../../stitches.config'
 
-const TeamMembersContainer = styled('article', {
+import { Center, Article, ArticleHeading, Section } from '../components/Content'
+
+const TeamMembersSection = styled('section', {
   display: 'flex',
   flexWrap: 'wrap',
+  justifyContent: 'center',
   '& > *': {
-    margin: '0 1em',
+    margin: '1em',
   },
 })
 
 const Person = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  '*': {
-    marginBottom: '1em',
+  '& > *': {
+    marginBottom: '0.5em',
   },
 })
 
@@ -29,6 +32,10 @@ const PersonAvatar = styled('img', {
 
 const PersonName = styled('h4', {
   fontSize: '2rem',
+})
+
+const PersonRole = styled('h5', {
+  fontSize: '1.5rem',
 })
 
 const teamMembers = [
@@ -54,16 +61,22 @@ const teamMembers = [
 
 const TeamMembers = () => {
   return (
-    <TeamMembersContainer>
-      {teamMembers.map((person) => {
-        return (
-          <Person key={person.slug}>
-            <PersonAvatar src={person.avatarImageURL} alt={person.name} />
-            <PersonName>{person.name}</PersonName>
-          </Person>
-        )
-      })}
-    </TeamMembersContainer>
+    <Article id="team-members" size="wide">
+      <Section align="center">
+        <ArticleHeading>Our Team Members</ArticleHeading>
+      </Section>
+      <TeamMembersSection>
+        {teamMembers.map((person) => {
+          return (
+            <Person key={person.slug}>
+              <PersonAvatar src={person.avatarImageURL} alt={person.name} />
+              <PersonName>{person.name}</PersonName>
+              <PersonRole>{person.role}</PersonRole>
+            </Person>
+          )
+        })}
+      </TeamMembersSection>
+    </Article>
   )
 }
 
