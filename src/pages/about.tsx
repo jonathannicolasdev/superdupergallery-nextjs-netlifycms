@@ -6,6 +6,8 @@ import OpenGraphMeta from '../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../components/meta/TwitterCardMeta'
 import Hero from '../components/Hero'
 import AnimatedHeading from '../components/AnimatedHeading'
+import { Center } from '../components/Content'
+import TeamMembers from '../components/TeamMembers'
 
 export default function AboutPage() {
   return (
@@ -21,6 +23,10 @@ export default function AboutPage() {
       <Hero>
         <AnimatedHeading />
       </Hero>
+
+      <Center>
+        <TeamMembers />
+      </Center>
     </Layout>
   )
 }
