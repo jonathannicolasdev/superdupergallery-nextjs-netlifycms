@@ -18,12 +18,11 @@ const Person = styled('div', {
 
 const PersonAvatar = styled('img', {
   display: 'block',
-  backgroundColor: 'white',
+  backgroundColor: '#111',
   borderRadius: '1em',
+  maxWidth: '300px',
   width: '100%',
-  height: '100px',
   '@desktop': {
-    width: '300px',
     height: '300px',
   },
 })
@@ -36,20 +35,20 @@ const teamMembers = [
   {
     slug: 'jonathan-nicolas',
     name: 'Jonathan Nicolas',
-    role: 'Role',
-    avatarImageURL: '/images/jonathan-nicolas.jpg',
+    role: 'Co-Founder',
+    avatarImageURL: '/avatars/jonathan-nicolas.png',
   },
   {
-    slug: 'someone-a',
-    name: 'Someone A',
-    role: 'Role',
-    avatarImageURL: '/images/someone-a.jpg',
+    slug: 'alfred-tababa',
+    name: 'Alfred Tababa',
+    role: 'Co-Founder',
+    avatarImageURL: '/avatars/alfred-tababa.png',
   },
   {
-    slug: 'someone-b',
-    name: 'Someone B',
-    role: 'Role',
-    avatarImageURL: '/images/someone-b.jpg',
+    slug: 'jessa-almirol',
+    name: 'Jessa Almirol',
+    role: 'Co-Founder',
+    avatarImageURL: '/avatars/jessa-almirol.png',
   },
 ]
 
