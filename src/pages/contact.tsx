@@ -19,7 +19,7 @@ export default function AboutPage() {
       <TwitterCardMeta url={'/about'} />
 
       <Hero>
-        <AnimatedHeading words={['Contact', 'Us']} />
+        <AnimatedHeading sentence="Contact Us" />
       </Hero>
     </Layout>
   )

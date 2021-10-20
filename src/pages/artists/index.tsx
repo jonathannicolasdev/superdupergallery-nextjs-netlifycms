@@ -28,7 +28,7 @@ export default function ArtistsPage({ artists }: Props) {
       <TwitterCardMeta url={url} title={title} />
 
       <Hero>
-        <AnimatedHeading words={['The', 'Amazing', 'Artists']} />
+        <AnimatedHeading sentence="The Amazing Artists" />
       </Hero>
 
       <Center>

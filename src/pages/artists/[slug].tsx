@@ -28,7 +28,7 @@ export default function ArtistSlugPage({ artist, artworks }: Props) {
       <TwitterCardMeta url={url} title={title} />
 
       <Hero>
-        <AnimatedHeading words={[artist.name]} />
+        <AnimatedHeading sentence={artist.name} />
       </Hero>
 
       <Center>

@@ -38,24 +38,16 @@ const Word = styled('div', {
   },
 })
 
-const defaultWords = [
-  'Super',
-  'Duper',
-  'Gallery',
-  'offers',
-  'a',
-  'portal',
-  'further',
-  'beyond',
-]
-
 type AnimatedHeadingProps = {
+  sentence?: string
   words?: string[]
 }
 
 export default function AnimatedHeading({
-  words = defaultWords,
+  sentence = 'Change This Text',
 }: AnimatedHeadingProps) {
+  const words = sentence.split(' ')
+
   return (
     <Heading>
       {words.map((word, index) => {

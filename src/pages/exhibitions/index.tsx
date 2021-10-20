@@ -36,7 +36,7 @@ export default function ExhibitionsPage({ exhibitions, pagination }: Props) {
       <TwitterCardMeta url={url} title={title} />
 
       <Hero>
-        <AnimatedHeading words={['Super', 'Exhibitions', 'For', 'You']} />
+        <AnimatedHeading sentence="Super Exciting Exhibitions" />
       </Hero>
 
       <Center>

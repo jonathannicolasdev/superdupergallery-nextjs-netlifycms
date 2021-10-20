@@ -36,7 +36,7 @@ export default function ArtworksPage({ artworks, pagination }: Props) {
       <TwitterCardMeta url={url} title={title} />
 
       <Hero>
-        <AnimatedHeading words={['Super', 'Artworks', 'For', 'You']} />
+        <AnimatedHeading sentence="Super Artworks for Your Eyes" />
       </Hero>
 
       <Center>

@@ -21,7 +21,7 @@ export default function AboutPage() {
       <TwitterCardMeta url={'/about'} />
 
       <Hero>
-        <AnimatedHeading />
+        <AnimatedHeading sentence="Super Duper Gallery offers a portal further beyond" />
       </Hero>
 
       <Center>
