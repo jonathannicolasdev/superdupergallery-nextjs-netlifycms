@@ -12,18 +12,23 @@ const ArtistListContainer = styled('div', {
 })
 
 const ArtistCollection = styled('ul', {
-  columnCount: 3,
   listStyle: 'none',
   fontSize: '1.2rem',
   a: {
     textDecoration: 'none',
     color: 'white',
     padding: '0.2em 0',
-    border: '0px solid black',
     borderWidth: '5px 0',
+    '@desktop': {
+      border: '0px solid black',
+    },
     '&:hover': {
       borderBottom: '5px solid red',
     },
+  },
+  columnCount: 2,
+  '@desktop': {
+    columnCount: 3,
   },
 })
 
