@@ -5,11 +5,13 @@ import { styled } from '../../stitches.config'
 import Logo from './Logo'
 
 const FooterContainer = styled('footer', {
+  display: 'flex',
+  flexWrap: 'wrap',
+  flexDirection: 'column',
+  justifyContent: 'center',
   width: '100%',
   border: '2px solid white',
   minHeight: '200px',
-  display: 'flex',
-  flexDirection: 'column',
   padding: '0.5em 0',
   marginTop: '5em',
   '@desktop': {
@@ -29,7 +31,10 @@ const AddressAnchor = styled('a', {
   textDecoration: 'none',
   padding: '0.5em 0',
   borderBottom: '5px solid black',
-  fontSize: '1.5rem',
+  fontSize: '1.2rem',
+  width: '100%',
+  minWidth: '250px',
+  maxWidth: '380px',
   '&:hover': {
     borderBottom: '5px solid red',
   },
@@ -93,11 +98,11 @@ export default function Footer() {
           target="_blank"
         >
           <address>
-            No.8-A 11th Jamboree, Diliman,
-            <br />
-            Quezon City, 1103 Metro Manila
-            <br />
-            Philippines
+            <span>No.8-A 11th Jamboree, </span>
+            <span>Diliman, </span>
+            <span>Quezon City, </span>
+            <span>1103 Metro Manila, </span>
+            <span>Philippines</span>
           </address>
         </AddressAnchor>
       </FooterSegment>
