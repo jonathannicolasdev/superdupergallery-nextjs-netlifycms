@@ -6,7 +6,13 @@ import OpenGraphMeta from '../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../components/meta/TwitterCardMeta'
 import Hero from '../components/Hero'
 import { AnimatedHeadingHome } from '../components/AnimatedHeading'
-import { Center, Article, ArticleHeading, Section } from '../components/Content'
+import {
+  Center,
+  Article,
+  ArticleHeading,
+  Section,
+  CoverImage,
+} from '../components/Content'
 
 export default function HomePage() {
   return (
@@ -24,6 +30,7 @@ export default function HomePage() {
       </Hero>
 
       <Center>
+        <CoverImage />
         <Article>
           <Section>
             <ArticleHeading>

@@ -3,7 +3,8 @@ import { styled } from '../../stitches.config'
 export const Hero = styled('section', {
   display: 'flex',
   justifyContent: 'center',
-  margin: '25px 0',
+  margin: '50px 0',
+  marginBottom: '75px',
   '@desktop': {
     margin: '75px 0',
   },
