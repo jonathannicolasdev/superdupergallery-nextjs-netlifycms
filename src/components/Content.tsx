@@ -124,7 +124,7 @@ export const FeaturedArtworks = () => {
       {images.map((image, index) => {
         if (image.url) {
           return (
-            <NextLink href={image.url} passHref>
+            <NextLink key={index} href={image.url} passHref>
               <a>
                 <FeaturedArtwork key={index} src={image.src} alt={image.name} />
               </a>
