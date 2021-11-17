@@ -55,3 +55,28 @@ export const CoverImage = styled('img', {
     height: '600px',
   },
 })
+
+export const MapAnchor = styled('a', {
+  display: 'block',
+  cursor: 'pointer',
+  textDecoration: 'none',
+  width: '100%',
+  maxWidth: '1000px',
+})
+
+export const MapImage = styled('img', {
+  backgroundImage: 'url("/images/map.png")',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'top center',
+  backgroundSize: 'cover',
+  width: '100%',
+  maxWidth: '1000px',
+  height: '200px',
+  transition: 'all 0.25s ease-in-out',
+  '@desktop': {
+    height: '300px',
+  },
+  '&:hover': {
+    filter: 'brightness(1.2)',
+  },
+})

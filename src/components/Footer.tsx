@@ -35,6 +35,7 @@ const AddressAnchor = styled('a', {
   width: '100%',
   minWidth: '250px',
   maxWidth: '380px',
+  transition: 'all 0.25s ease-in-out',
   '&:hover': {
     borderBottom: '5px solid red',
   },
@@ -45,6 +46,7 @@ const EmailLink = styled('a', {
   textDecoration: 'none',
   borderBottom: '5px solid black',
   fontSize: '1rem',
+  transition: 'all 0.25s ease-in-out',
   '@desktop': {
     fontSize: '1.5rem',
   },

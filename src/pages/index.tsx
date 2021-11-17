@@ -12,6 +12,8 @@ import {
   ArticleHeading,
   Section,
   CoverImage,
+  MapAnchor,
+  MapImage,
 } from '../components/Content'
 
 export default function HomePage() {
@@ -110,6 +112,14 @@ export default function HomePage() {
             </p>
           </Section>
         </Article>
+
+        <MapAnchor
+          href="https://goo.gl/maps/NGtoAsrkYFCH1cud8"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <MapImage />
+        </MapAnchor>
       </Center>
     </Layout>
   )
