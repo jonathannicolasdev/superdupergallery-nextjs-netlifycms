@@ -54,6 +54,7 @@ const Navigation = styled('nav', {
   textTransform: 'uppercase',
   fontWeight: 900,
   fontSize: '0.75rem',
+  padding: '1em 0',
   '@desktop': {
     fontSize: '1rem',
   },
@@ -61,7 +62,7 @@ const Navigation = styled('nav', {
     letterSpacing: '1px',
     color: 'white',
     textDecoration: 'none',
-    margin: '0 0.5em',
+    margin: '0 1.2em',
     '@desktop': {
       margin: '0 1em',
     },
