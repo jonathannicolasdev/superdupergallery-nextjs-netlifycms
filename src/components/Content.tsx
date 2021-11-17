@@ -1,9 +1,17 @@
+import NextLink from 'next/link'
 import { styled } from '../../stitches.config'
 
 export const Center = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+})
+
+export const CenterContainer = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '100%',
 })
 
 export const Article = styled('article', {
@@ -80,3 +88,54 @@ export const MapImage = styled('img', {
     filter: 'brightness(1.2)',
   },
 })
+
+export const FeaturedArtworksContainer = styled('div', {
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '1em',
+  justifyContent: 'center',
+  alignItems: 'center',
+})
+
+export const FeaturedArtwork = styled('img', {
+  width: '300px',
+  height: '300px',
+})
+
+export const FeaturedArtworks = () => {
+  const images = [
+    {
+      name: 'Featured A',
+      src: '/images/featured-a.jpeg',
+    },
+    {
+      name: 'Featured B',
+      src: '/images/featured-b.jpeg',
+    },
+    {
+      name: 'Featured C',
+      src: '/images/featured-c.jpeg',
+      url: '/artworks/corrupted-alburoto',
+    },
+  ]
+
+  return (
+    <FeaturedArtworksContainer>
+      {images.map((image, index) => {
+        if (image.url) {
+          return (
+            <NextLink href={image.url} passHref>
+              <a>
+                <FeaturedArtwork key={index} src={image.src} alt={image.name} />
+              </a>
+            </NextLink>
+          )
+        } else {
+          return (
+            <FeaturedArtwork key={index} src={image.src} alt={image.name} />
+          )
+        }
+      })}
+    </FeaturedArtworksContainer>
+  )
+}

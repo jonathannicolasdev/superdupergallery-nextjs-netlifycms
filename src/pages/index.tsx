@@ -14,6 +14,7 @@ import {
   CoverImage,
   MapAnchor,
   MapImage,
+  FeaturedArtworks,
 } from '../components/Content'
 
 export default function HomePage() {
@@ -84,6 +85,8 @@ export default function HomePage() {
             </p>
           </Section>
         </Article>
+
+        <FeaturedArtworks />
 
         <Article>
           <Section>
